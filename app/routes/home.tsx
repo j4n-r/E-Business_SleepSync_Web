@@ -1,13 +1,23 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+import { Navbar } from "~/components/Navbar";
+import poster from "~/assets/images/sleepSyncPoster.jpg";
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <>
+      <Navbar />
+      <div>
+        <section
+          className="bg-fixed h-screen w-full "
+          style={{
+            backgroundImage: `url(${poster})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="bg-black/40 col w-1/2 h-full ">Some texst</div>
+        </section>
+      </div>
+    </>
+  );
 }
