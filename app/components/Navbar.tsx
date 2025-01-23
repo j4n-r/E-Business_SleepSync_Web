@@ -24,13 +24,16 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden gap-20 text-lg md:flex">
-          <Link to="/features" className="transition-colors hover:text-primary">
+          <Link
+            to="/features"
+            className="transition-colors hover:text-gray-400"
+          >
             Features
           </Link>
-          <Link to="/pricing" className="transition-colors hover:text-primary">
+          <Link to="/pricing" className="transition-colors hover:text-gray-400">
             Pricing
           </Link>
-          <Link to="/blog" className="transition-colors hover:text-primary">
+          <Link to="/blog" className="transition-colors hover:text-gray-400">
             Shop
           </Link>
         </nav>
