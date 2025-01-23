@@ -10,23 +10,22 @@ import {
 import { Card, CardContent } from "~/components/ui/card";
 import { useEffect, useState } from "react";
 
+// 1) Import framer-motion
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function Home() {
   const productTexts = [
     ["Headline", "Some text"],
-    ["Headlinw 2", "Some text 2"],
+    ["Headline 2", "Some text 2"],
     ["Headline 3", "Some Text 3"],
   ];
   const [currSlide, setCurrSlide] = useState(0);
 
   const handleNextSlide = () => {
-    if (productTexts.length >= currSlide || productTexts.length <= 0) {
-    }
     setCurrSlide(currSlide + 1);
   };
 
   const handlePrevSlide = () => {
-    if (productTexts.length >= currSlide || productTexts.length <= 0) {
-    }
     setCurrSlide(currSlide - 1);
   };
 
@@ -53,14 +52,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="grid  grid-cols-2 h-screen w-full p-20">
+
+        <section className="grid grid-cols-2 h-screen w-full p-20">
           <div className="p-20 my-auto">
             <Carousel className="w-full ">
-              <CarouselContent className="">
+              <CarouselContent>
                 <CarouselPicture img={poster} />
                 <CarouselPicture img={poster} />
                 <CarouselPicture img={poster} />
               </CarouselContent>
+
               <div onClick={handlePrevSlide}>
                 <CarouselPrevious />
               </div>
@@ -69,11 +70,22 @@ export default function Home() {
               </div>
             </Carousel>
           </div>
+
           <div className="m-auto">
-            <div className="font-bold text-4xl">
-              {productTexts[currSlide][0]}
-            </div>
-            <div>{productTexts[currSlide][1]}</div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currSlide}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="font-bold text-4xl">
+                  {productTexts[currSlide][0]}
+                </div>
+                <div>{productTexts[currSlide][1]}</div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
       </div>
@@ -83,7 +95,7 @@ export default function Home() {
 
 export function CarouselPicture({ img }) {
   return (
-    <CarouselItem className="">
+    <CarouselItem>
       <div className="p-1">
         <Card className="border-0">
           <CardContent className="flex aspect-square p-0 justify-center">
