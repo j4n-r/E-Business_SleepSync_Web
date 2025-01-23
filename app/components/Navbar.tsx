@@ -7,10 +7,17 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Link } from "react-router";
+import { motion, useScroll, useSpring } from "motion/react";
 
 export function Navbar() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
+    <header className="text-white sticky top-0 z-40 w-full bg-black">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center space-x-2">
           <span className="font-bold text-xl">SleepSync</span>
@@ -58,6 +65,19 @@ export function Navbar() {
           </DropdownMenu>
         </div>
       </div>
+      <motion.div
+        id="scroll-indicator"
+        style={{
+          scaleX,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 5,
+          originX: 0,
+          backgroundColor: "#ffffff",
+        }}
+      />
     </header>
   );
 }
