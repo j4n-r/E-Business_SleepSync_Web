@@ -33,7 +33,7 @@ export function Navbar() {
           <Link to="/pricing" className="transition-colors hover:text-gray-400">
             Pricing
           </Link>
-          <Link to="/blog" className="transition-colors hover:text-gray-400">
+          <Link to="/shop" className="transition-colors hover:text-gray-400">
             Shop
           </Link>
         </nav>

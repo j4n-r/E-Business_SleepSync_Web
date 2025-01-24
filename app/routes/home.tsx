@@ -1,4 +1,5 @@
 import poster from "~/assets/images/sleepSyncPoster.jpg";
+import { Footer } from "~/components/Footer";
 import {
   Carousel,
   CarouselContent,
@@ -89,6 +90,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 }
