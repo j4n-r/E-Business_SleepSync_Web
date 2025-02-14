@@ -37,7 +37,7 @@ npm install
 - **What It Does:**  
   This builds the project for production and then starts the production server.
 - **Access:**  
-  After the commands complete, open your browser and navigate to [http://localhost:5173](http://localhost:5173)
+  After the commands complete, open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 5. Technology Stack
 - [React Router](https://reactrouter.com/home)
