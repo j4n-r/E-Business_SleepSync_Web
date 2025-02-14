@@ -15,10 +15,18 @@ cd eBusiness
 npm install
 ```
 
+## Run Dev Server
 4. Run dev server
 ``` bash
 npm run dev
 ```
+
+## Build and Run 
+4. 
+``` bash
+npm run build && npm run start
+```
+
 
 5. In your browser go to `http://localhost:5173`
 
