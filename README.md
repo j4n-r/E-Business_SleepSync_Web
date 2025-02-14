@@ -44,7 +44,3 @@ npm install
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Motion](https://motion.dev/)
-
----
-
-This format clearly separates the development and production steps, making it easier to follow based on your workflow.
