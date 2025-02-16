@@ -1,4 +1,5 @@
 import { Copyright } from "lucide-react";
+import { Link } from "react-router";
 
 export function Footer() {
   return (
@@ -10,7 +11,8 @@ export function Footer() {
         <div className="grid grid-cols-3 col-span-3">
           <div>Unternehmen</div>
           <div>Suppot</div>
-          <div>Blog</div>
+          <Link to="/imprint" className="text-white hover:underline">Impressum</Link>
+
         </div>
       </div>
       <hr className="border-gray-700 my-4" />
