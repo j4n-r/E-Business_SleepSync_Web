@@ -30,6 +30,12 @@ export function Navbar() {
           >
             Features
           </Link>
+          <Link to ="/function_of_sleep" className= "transition-colors hover:text-gray-400">
+          Schlaffunktion 
+          </Link>
+          <Link to = "/day_night_rythmus" className= "transition-colors hover:text-gray-400">
+          Tag/Nacht Rythmus 
+          </Link>
           <Link to="/pricing" className="transition-colors hover:text-gray-400">
             Pricing
           </Link>
