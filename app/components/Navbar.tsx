@@ -31,7 +31,7 @@ export function Navbar() {
             Features
           </Link>
           <Link to ="/sleepfunction" className= "transition-colors hover:text-gray-400">
-          Schlaffunktion
+          Schlafwissen
           </Link>
           <Link to = "/daynightrythmus" className= "transition-colors hover:text-gray-400">
           Tag/Nacht Rythmus 
