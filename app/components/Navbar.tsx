@@ -35,9 +35,6 @@ export function Navbar() {
           <Link to = "/daynightrythmus" className= "transition-colors hover:text-gray-400">
           Tag/Nacht Rythmus 
           </Link>
-          <Link to="/pricing" className="transition-colors hover:text-gray-400">
-            Pricing
-          </Link>
           <Link to="/shop" className="transition-colors hover:text-gray-400">
             Shop
           </Link>
