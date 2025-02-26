@@ -25,8 +25,7 @@ export function Navbar() {
 
         <nav className="hidden gap-20 text-lg md:flex">
           <Link
-            to="/features"
-            className="transition-colors hover:text-gray-400"
+            to="/features" className="transition-colors hover:text-gray-400"
           >
             Features
           </Link>
