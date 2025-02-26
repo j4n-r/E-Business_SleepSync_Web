@@ -1,27 +1,79 @@
+import daynightclock from "~/assets/images/daynightclock.jpg";
+//Bild verfügbar unter: https://www.hogrefe.com/index.php?eID=dumpFile&t=f&f=2903&token=405d45bc4d2493f0cf9b80ba030d355581ad400c
+import scn from "~/assets/images/scn.png"
+//Bild verfügbar unter: https://www.orthomed-gmbh.de/wp-content/uploads/2020/11/ortholuna-licht.png
 import { motion } from "motion/react";
-import { Link } from "react-router";
 import { Card, CardContent } from "~/components/ui/card";
 
 export async function loader() {
   return { undefined };
 }
 
+const sections = [
+  {
+    title:"Die innere Uhr in unserem Körper",
+    text : `Sie kennen das bestimmt, sie liegen Nachts im Bett und können nicht Schlafen. Das liegt daran, dass die Melatoninproduktion durch äüßere Faktoren
+           gestört wurde. Die innere Uhr unseres Körper oder besser gesagt der Tag Nacht Rythmus steuert unser Müdigkeitsgefühl. Jede Zelle und jedes Gewebe in unserm Körper besitz
+           eine innere Uhr. Am meisten wird diese durch das Licht gesteuert. Während Blaues Licht eine Melatoninhemmende Wirkung auf unseren Körper hat, hat Rotes Licht 
+           eine Melatoninfördernde Wirkung auf unseren Körper. Beide Spektren des Lichtes, simuliert unsere Wecklampe. Während sie sich Schlaflegen wollen projiziert die 
+           Lampe ein Rotes Licht, und während sich langsam wach werden ein Blaues Licht, was denn Sonnenaufgang simulieren soll. Auch andere Faktoren wie zum Beispiel die 
+           letze Mahlzeit vor dem Schlafen gehen haben Einfluss auf die Melatoninproduktion. Der Verdaungstrakt arbeitet und die Leber und Niere arbeiten und signaliseren dem
+           Suprachiasmatischen Nucleus (SCN), dass es noch nicht Zeit ist, sich Schlafen zu legen. Weiter Faktoren, die die Melatoninproduktion beinflussen sind Stress, Koffein und 
+           starke Körperliche Bewegung.`,
+    image : daynightclock
+  },
+  {
+    title:"Der Suprachaisamatischer Nucleus",
+    text: `Einfachheitshalber wird der Suprachiasmatischer Nucleus mit SCN abgekürzt. Der SCN ist Haupt Uhr in unserem Körper. Er sitzt Hypothalamus unseres Gehirns,
+           direkt hinter den Sehnerven. Er koordniert unsere innere Uhr im gesamten Körper, in einem 24 Stunden Rythmus. Die Hauptsignale kommen über die Sehnerven
+           unsere Augen. Wenn blaues Licht von den Sehnerven wahrgenommen wird, werden diese Signale an den SCN weitergeileitet und die Prduktion von Cortisol wird gefördert
+           und die Produktion von Melatonon wird gehemmt. Die Produktion von Cortisol geschieht vorallem morgens. Cortisol ist ein Hormon das in den Nebennieren produziert wird, dass auch 
+           als Stresshormon bezeichnit wird. Es fördert den Blutzuckerspiegel indem es die Umwandlung von Proteinen und Fetten in Glukose (Fruchtzucker) anregt. In Stresssituationen wird es 
+           freigesetzt und es schärft die Aufmerksamkeit und setzt den Körper in Arlambereitschaft. Der Gegenspieler zu Cortisol in bezug auf den Tag Nacht Rythmus ist Melatonin. 
+           Melatonin wird in der Zirbeldrüse im Gehirn produziert. Melatonin wird bei rotem Licht vorallem produziert und es signalisert dem Körper, dass es Zeit ist, sich Schlafen 
+           zu legen. Die Signale an die Zirbeldrüse kommen direkt vom SCN, je nach Lichtart die die Sehnerven an den SCN weiterleiten. Der SCN passt sich an. Zum Beispiel wenn sie immer zu einer
+           bestimmten Zeit schlafen gehen, passt sich der SCN so an, dass die Melatoninproduktion zu dieser Zeit gefördert wird. Es sei denn sie Essen zu dieser Zeit noch etwas nahrhaftes oder 
+           bewegen sich viel, dann passiert es, dass sie sich nicht so müde fühlen.`,
+      image : scn
+  },
+
+  {
+    title: "Wie kann SleepSync den Tag Nacht Rythmus unterstützen?",
+    text:`Unser Produkt projiziert am Abend Rotes Licht, was die Melatoninproduktion im Gehirn fördert. 20-30 Minuten bevor sie aufwachen wir blaues Licht projiziert,
+          was einen Sonnenaufgang simulieren soll und die Cortisolproduktion fördern soll. Wenn sie immer zu bestimmten Zeiten Schlafen gehen wollen, hilft ihnen SleepSync dabei, 
+          ihre innere Uhr in den gewünschten Rythmus zu verschieben. Besonders hilfreich in dieser Hinsicht ist unser Produkt bei JetLags. `,
+    image : null
+  }
+];
+
 export default function DayNightRythmus() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="p-8"
-    >
-      <Card className="shadow-lg">
-        <CardContent>
-          <h1 className="text-3xl font-bold mb-4">Funktion des Schlafes</h1>
-          <p className="text-gray-700">
-            {/* Hier kommt der Erklärungstext zur Funktion des Schlafes */}
-          </p>
-        </CardContent>
-      </Card>
-    </motion.div>
+    <div className="p-6 space-y-8">
+    <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-4xl font-bold text-center">
+      Die innere Uhr in unserem Körper
+    </motion.h1>
+    <div className="grid gap-8">
+      {sections.map((section, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.3 }}
+        >
+          <Card className="shadow-lg rounded-2xl">
+            <CardContent className={`p-6 space-y-4 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} items-center md:items-stretch`}> 
+              {section.image && (
+                <img src={section.image} alt={section.title} className="w-1/3 h-auto rounded-xl self-center md:self-auto" />
+              )}
+              <div className="md:w-full md:pl-6 flex flex-col justify-center">
+                <h2 className="text-3xl font-semibold">{section.title}</h2>
+                <p className="text-lg leading-relaxed">{section.text}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
   );
 }
