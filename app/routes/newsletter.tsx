@@ -14,14 +14,11 @@ export default function Newsletter() {
     return (
         <main className="p-10 max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold mb-6">Newsletter</h1>
-
             <p className="mb-4">
                 Möchtest du immer auf dem Laufenden bleiben und keine Neuigkeiten mehr verpassen?
                 Dann melde dich für unseren Newsletter an! Wir informieren dich regelmäßig über neue
                 Produkte, Angebote und Aktionen.
             </p>
-
-            {/* Newsletter-Anmeldung */}
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     type="email"
@@ -38,18 +35,17 @@ export default function Newsletter() {
                     Jetzt anmelden
                 </button>
             </form>
-
-            {/* Erfolgsmeldung */}
             {isSubmitted && (
                 <p className="text-green-500 mt-4">
                     ✅ Du hast dich erfolgreich zum Newsletter angemeldet!
                 </p>
             )}
-
-            {/* Zurück-Button */}
             <div className="mt-6">
                 <Link to="/" className="text-blue-600 hover:underline">Zurück zur Startseite</Link>
             </div>
+            <p className="mt-10 text-sm text-gray-500">
+          &copy; 2025 SleepSync. Alle Rechte vorbehalten.
+        </p>
         </main>
     );
 }
