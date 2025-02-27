@@ -22,7 +22,7 @@ export default function Impressum() {
           <p className="mb-2 font-semibold">Kontakt:</p>
           <p className="mb-4">
             Telefon: +49 123 4567890<br />
-            E-Mail: <a href="mailto:sleep@sync.com" className="text-blue-600 hover:underline">sleep@sync.com</a>
+            E-Mail: <a href="mailto:kontakt@sleepsync.com" className="text-blue-600 hover:underline">kontakt@sleepsync.com</a>
           </p>
           <p className="mb-2 font-semibold">Umsatzsteuer-ID:</p>
           <p className="mb-4">DE123456789</p>

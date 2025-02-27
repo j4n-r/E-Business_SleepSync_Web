@@ -7,4 +7,6 @@ export default [
     route("imprint", "./routes/imprint.tsx"),
     route("sleepfunction", "./routes/sleepfunction.tsx"),
     route("daynightrythmus", "./routes/daynightrythmus.tsx"),
+    route("support", "./routes/support.tsx"),
+    route("company", "./routes/company.tsx"),
 ] satisfies RouteConfig;
