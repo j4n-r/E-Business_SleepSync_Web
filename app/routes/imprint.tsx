@@ -15,24 +15,23 @@ export default function Impressum() {
           <h1 className="text-2xl font-bold mb-4">Impressum</h1>
           <p className="mb-2">Angaben gemäß § 5 TMG:</p>
           <p className="mb-4">
-            Max Mustermann<br />
-            Musterstraße 123<br />
-            12345 Musterstadt
+            SleepSync GmbH<br />
+            Straße des Schlafens 45<br />
+            12345 Schlafstadt
           </p>
           <p className="mb-2 font-semibold">Kontakt:</p>
           <p className="mb-4">
             Telefon: +49 123 4567890<br />
-            E-Mail: <a href="mailto:max@example.com" className="text-blue-600 hover:underline">max@example.com</a>
+            E-Mail: <a href="mailto:sleep@sync.com" className="text-blue-600 hover:underline">sleep@sync.com</a>
           </p>
           <p className="mb-2 font-semibold">Umsatzsteuer-ID:</p>
           <p className="mb-4">DE123456789</p>
           <p className="mb-2 font-semibold">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
           <p className="mb-4">
-            Max Mustermann<br />
-            Musterstraße 123<br />
-            12345 Musterstadt
+            SleepSync GmbH<br />
+            Straße des Schlafens 45<br />
+            12345 Schlafstadt
           </p>
-          <p className="text-sm text-gray-600">Quelle: <a href="https://www.e-recht24.de" className="text-blue-600 hover:underline">e-recht24.de</a></p>
           <div className="mt-6">
             <Link to="/" className="text-blue-600 hover:underline">Zurück zur Startseite</Link>
           </div>
