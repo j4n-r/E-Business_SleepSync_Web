@@ -39,9 +39,10 @@ const sections = [
 
   {
     title: "Wie kann SleepSync den Tag Nacht Rythmus unterstützen?",
-    text:`Unser Produkt projiziert am Abend Rotes Licht, was die Melatoninproduktion im Gehirn fördert. 20-30 Minuten bevor sie aufwachen wir blaues Licht projiziert,
-          was einen Sonnenaufgang simulieren soll und die Cortisolproduktion fördern soll. Wenn sie immer zu bestimmten Zeiten Schlafen gehen wollen, hilft ihnen SleepSync dabei, 
-          ihre innere Uhr in den gewünschten Rythmus zu verschieben. Besonders hilfreich in dieser Hinsicht ist unser Produkt bei JetLags oder Schichtarbeitern. `,
+    text:`Unser Produkt projiziert am Abend Rotes Licht, was die Melatoninproduktion im Gehirn fördert und so eine natürliche Einschlafhilfe bietet. 20-30 Minuten bevor sie aufwachen wird blaues Licht projiziert,
+          was einen Sonnenaufgang simuliert und die Cortisolproduktion fördert. Wenn sie immer zu bestimmten Zeiten Schlafen gehen wollen, hilft ihnen SleepSync dabei, 
+          ihre innere Uhr in den gewünschten Rythmus zu verschieben. Besonders hilfreich ist unser Produkt in dieser Hinsicht bei Personen mit einem unregelmäßigen Tagesablauf, wie bei 
+          Vielreisenden oder Schichtarbeitern. `,
     image : null
   }
 ];

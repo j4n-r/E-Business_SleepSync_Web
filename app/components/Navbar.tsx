@@ -33,7 +33,7 @@ export function Navbar() {
           Schlafwissen
           </Link>
           <Link to = "/daynightrythmus" className= "transition-colors hover:text-gray-400">
-          Tag/Nacht Rythmus 
+          Tag Nacht Rythmus 
           </Link>
           <Link to="/shop" className="transition-colors hover:text-gray-400">
             Shop
