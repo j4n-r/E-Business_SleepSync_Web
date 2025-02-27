@@ -16,9 +16,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const productTexts = [
-    ["Headline", "Some text"],
-    ["Headline 2", "Some text 2"],
-    ["Headline 3", "Some Text 3"],
+    ["Leichter einschalfen, einfacher aufwachen", "Unsere smarte Lampe nutzt sanftes und angenehmes Licht, um dein Einschlafen zu erleichtern und das Aufwachen angenehmer zu machen – für einen natürlichen und erholsamen Schlafrhythmus."],
+    ["Verstehe und optimiere deinen Schlaf", "Unser speziell entwickeltes Armband trackt deinen Schlaf, während die App wertvolle Analysen und Tipps liefert. So kannst du deine Schlafqualität verbessern und erholter aufwachen."],
+    ["Erhalte Zugang zu unserer App!", "Beim Kauf eines Sets erhältst du einen lebenslangen Zugriff auf unsere App. Hier kannst du deinen Schlaf tracken, Analysen einsehen und Tipps für einen besseren Schlaf erhalten."],
+
   ];
   const [currSlide, setCurrSlide] = useState(0);
 

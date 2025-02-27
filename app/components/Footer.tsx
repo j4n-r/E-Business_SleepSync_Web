@@ -3,23 +3,25 @@ import { Link } from "react-router";
 
 export function Footer() {
   return (
-    <section className=" bg-black text-white p-20">
-      <div className="grid grid-cols-5">
-        <div className="col-span-2">
-          <span>Newsletter</span>
+    <section className="bg-black text-white p-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left">
+        <div>
+          <Link to="/company" className="text-white hover:underline block">Unternehmen</Link>
         </div>
-        <div className="grid grid-cols-3 col-span-3">
-          <div>Unternehmen</div>
-          <div>Suppot</div>
-          <Link to="/imprint" className="text-white hover:underline">Impressum</Link>
-
+        <div>
+          <Link to="/support" className="text-white hover:underline block">Support</Link>
+        </div>
+        <div>
+          <Link to="/imprint" className="text-white hover:underline block">Impressum</Link>
+        </div>
+        <div>
+          <Link to="/newsletter" className="text-white hover:underline block">Newsletter</Link>
         </div>
       </div>
       <hr className="border-gray-700 my-4" />
-      <div className="flex text-sm">
-        Copyright
-        <Copyright className="mx-1" />
-        2025 SleepSync
+      <div className="flex justify-center items-center text-sm">
+        <Copyright className="mr-1" />
+        <span>2025 SleepSync</span>
       </div>
     </section>
   );
