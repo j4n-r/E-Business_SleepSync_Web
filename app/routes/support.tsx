@@ -1,3 +1,4 @@
+import { LucideHeadset } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { Card, CardContent } from "~/components/ui/card";
@@ -13,14 +14,17 @@ export default function Support() {
       <Card className="max-w-3xl  p-6 shadow-lg bg-white rounded-2xl">
         <CardContent>
           <main className="p-10  max-w-3xl">
-            <h1 className="text-3xl font-bold mb-6">Support</h1>
+            <h1 className="flex text-3xl font-bold mb-6 space-x-2">
+              {" "}
+              <LucideHeadset className="h-auto w-8" />
+              <span>Support</span>{" "}
+            </h1>
 
             <p className="mb-4">
               Benötigst du Hilfe oder hast du Fragen zu unseren Produkten? Unser
               Support-Team steht dir gerne zur Verfügung. Kontaktiere uns
-              einfach per E-Mail oder Telefon. Wir sind gerne für dich da!
+              einfach per E-Mail oder Telefon. Wir sind gerne für dich da! 🙂
             </p>
-
             <h2 className="text-2xl font-semibold mt-6 mb-2">
               So kontaktierst du uns
             </h2>

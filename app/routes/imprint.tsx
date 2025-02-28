@@ -13,7 +13,7 @@ export default function Impressum() {
       <Card className="max-w-3xl w-full p-6 shadow-lg bg-white rounded-2xl">
         <CardContent>
           <h1 className="text-2xl font-bold mb-4">Impressum</h1>
-          <p className="mb-2">Angaben gemäß § 5 TMG:</p>
+          <p className="mb-2">Angaben gemäß § 5 DDG:</p>
           <p className="mb-4">
             SleepSync GmbH<br />
             Straße des Schlafens 45<br />
