@@ -4,7 +4,7 @@ import { Link } from "react-router";
 export function Footer() {
   return (
     <section className="bg-black text-white p-10">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-center md:text-left">
         <div>
           <Link to="/company" className="text-white hover:underline block">
             Unternehmen
