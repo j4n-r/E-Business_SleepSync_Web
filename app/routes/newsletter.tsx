@@ -13,7 +13,7 @@ export default function Newsletter() {
     };
     return (
         <main className="p-10 max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold mb-6">Newsletter</h1>
+            <h1 className="text-3xl font-bold mb-6">Newsletter ✉️</h1>
             <p className="mb-4">
                 Möchtest du immer auf dem Laufenden bleiben und keine Neuigkeiten mehr verpassen?
                 Dann melde dich für unseren Newsletter an! Wir informieren dich regelmäßig über neue
