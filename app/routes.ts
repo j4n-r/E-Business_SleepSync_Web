@@ -4,6 +4,7 @@ export default [
   index("routes/home.tsx"),
   route("shop", "./routes/shop.tsx"),
   route("checkout", "./routes/checkout.tsx"),
+  route("success", "./routes/success.tsx"),
   route("features", "./routes/features.tsx"),
   route("imprint", "./routes/imprint.tsx"),
   route("sleepfunction", "./routes/sleepfunction.tsx"),

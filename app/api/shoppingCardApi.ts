@@ -1,3 +1,4 @@
+"use-client";
 import { type item } from "~/api/shoppingCardTypes";
 
 const CART_STORAGE_KEY = "shoppingCart";

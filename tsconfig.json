@@ -3,14 +3,7 @@
     "**/*",
     "**/.server/**/*",
     "**/.client/**/*",
-    ".react-router/types/**/*",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/components/ShoppingCart.tsx~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/api/shoppingCardTypes.ts~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/api/shoppingCardApi.ts~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/api/shoppingCard.ts~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/routes/Support.tsx~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/api/shoppingCart.ts~",
-    "../../.emacs.d/emacs-backup/home/j4n/projects/E-Business_SleepSync_Web/app/routes/checkout.tsx~"
+    ".react-router/types/**/*"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],

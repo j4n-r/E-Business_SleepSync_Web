@@ -8,15 +8,14 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
-import { useEffect, useState } from "react";
-import { getCartItems, getCartTotal, clearCart } from "~/api/shoppingCardApi";
+import { useState } from "react";
+import { clearCart, getCartItems, getCartTotal } from "~/api/shoppingCardApi";
 import { useNavigate } from "react-router";
 
 export default function CheckoutPage() {
+  const navigate = useNavigate();
   const cartItems = getCartItems();
   const cartTotal = getCartTotal();
-  const navigate = useNavigate();
-  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -24,45 +23,9 @@ export default function CheckoutPage() {
     address: "",
   });
 
-  useEffect(() => {
-    if (isOrderPlaced) {
-      clearCart();
-      setTimeout(() => {
-        setIsOrderPlaced(false);
-        navigate("/");
-      }, 3000);
-    }
-  }, [isOrderPlaced, navigate]);
-
   const handleInputChange = (event, fieldName) => {
     setFormData({ ...formData, [fieldName]: event.target.value });
   };
-
-  const placeOrder = () => {
-    console.log("Order placed with details:", {
-      items: cartItems,
-      total: cartTotal,
-      customerInfo: formData,
-    });
-    setIsOrderPlaced(true);
-  };
-
-  if (isOrderPlaced) {
-    return (
-      <main className="h-screen p-10 max-w-3xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold mb-6 text-green-500">
-            Vielen Dank für Ihre Bestellung!
-          </h1>
-          <p className="mb-4">
-            Ihre Bestellung wurde erfolgreich aufgegeben. Sie werden in Kürze
-            eine Bestätigungs-E-Mail erhalten.
-          </p>
-          <p>Sie werden in Kürze zur Startseite weitergeleitet.</p>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <main className="p-10 h-screen max-w-6xl mx-auto">
@@ -113,7 +76,13 @@ export default function CheckoutPage() {
             </Card>
           </div>
 
-          <div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              clearCart();
+              navigate("/success");
+            }}
+          >
             <Card>
               <CardHeader>
                 <CardTitle>Lieferdetails</CardTitle>
@@ -155,12 +124,12 @@ export default function CheckoutPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button onClick={placeOrder} className="w-full">
+                <Button type="submit" className="w-full hover:bg-green-900">
                   Bestellung aufgeben
                 </Button>
               </CardFooter>
             </Card>
-          </div>
+          </form>
         </div>
       )}
     </main>
