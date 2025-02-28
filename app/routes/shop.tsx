@@ -42,7 +42,6 @@ export default function Shop() {
         />
       </div>
       <div className="flex flex-col p-10  col-span-5">
-        <div className="text-3xl font-bold">SleepSync Bundle</div>
         <div className="my-10">
           <Card
             className={`h-full col-span-3 cursor-pointer ${
