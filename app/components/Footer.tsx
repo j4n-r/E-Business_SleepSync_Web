@@ -25,7 +25,13 @@ export function Footer() {
             Newsletter
           </Link>
         </div>
+        <div>
+        <Link to="/shipping" className="text-white hover:underline block">
+            Lieferung und Partnershops
+          </Link>
+        </div>
       </div>
+      
       <hr className="border-gray-700 my-4" />
       <div className="flex justify-center items-center text-sm">
         <Copyright className="mr-1" />
