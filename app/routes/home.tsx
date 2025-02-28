@@ -1,5 +1,4 @@
 import poster from "~/assets/images/sleepSyncPoster.jpg";
-import { Footer } from "~/components/Footer";
 import {
   Carousel,
   CarouselContent,
@@ -16,10 +15,18 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
   const productTexts = [
-    ["Leichter einschalfen, einfacher aufwachen", "Unsere smarte Lampe nutzt sanftes und angenehmes Licht, um dein Einschlafen zu erleichtern und das Aufwachen angenehmer zu machen – für einen natürlichen und erholsamen Schlafrhythmus."],
-    ["Verstehe und optimiere deinen Schlaf", "Unser speziell entwickeltes Armband trackt deinen Schlaf, während die App wertvolle Analysen und Tipps liefert. So kannst du deine Schlafqualität verbessern und erholter aufwachen."],
-    ["Erhalte Zugang zu unserer App!", "Beim Kauf eines Sets erhältst du einen lebenslangen Zugriff auf unsere App. Hier kannst du deinen Schlaf tracken, Analysen einsehen und Tipps für einen besseren Schlaf erhalten."],
-
+    [
+      "Leichter einschalfen, einfacher aufwachen",
+      "Unsere smarte Lampe nutzt sanftes und angenehmes Licht, um dein Einschlafen zu erleichtern und das Aufwachen angenehmer zu machen – für einen natürlichen und erholsamen Schlafrhythmus.",
+    ],
+    [
+      "Verstehe und optimiere deinen Schlaf",
+      "Unser speziell entwickeltes Armband trackt deinen Schlaf, während die App wertvolle Analysen und Tipps liefert. So kannst du deine Schlafqualität verbessern und erholter aufwachen.",
+    ],
+    [
+      "Erhalte Zugang zu unserer App!",
+      "Beim Kauf eines Sets erhältst du einen lebenslangen Zugriff auf unsere App. Hier kannst du deinen Schlaf tracken, Analysen einsehen und Tipps für einen besseren Schlaf erhalten.",
+    ],
   ];
   const [currSlide, setCurrSlide] = useState(0);
 
@@ -57,7 +64,7 @@ export default function Home() {
 
         <section className="grid grid-cols-2 h-screen w-full p-20">
           <div className="p-20 my-auto">
-            <Carousel className="w-full ">
+            <Carousel className="w-full">
               <CarouselContent>
                 <CarouselPicture img={poster} />
                 <CarouselPicture img={poster} />
@@ -91,7 +98,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 }
@@ -99,13 +105,10 @@ export default function Home() {
 export function CarouselPicture({ img }) {
   return (
     <CarouselItem>
-      <div className="p-1">
+      <div className="p-1 mx-auto max-w-[800px]">
         <Card className="border-0">
           <CardContent className="flex aspect-square p-0 justify-center">
-            <img
-              src={img}
-              className="object-cover w-full h-full rounded-md drop-shadow-xl"
-            />
+            <img src={img} className="object-cover rounded-md drop-shadow-xl" />
           </CardContent>
         </Card>
       </div>
