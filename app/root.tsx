@@ -51,7 +51,7 @@ export default function App() {
   return (
     <div className="min-h-screen">
       <Navbar setIsCartOpen={setIsCartOpen} />
-      <Outlet />
+      <Outlet context={setIsCartOpen} />
       <ShoppingCart open={isCartOpen} onOpenChange={setIsCartOpen} />
       <Footer />
     </div>

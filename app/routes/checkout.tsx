@@ -30,20 +30,16 @@ export default function CheckoutPage() {
       clearCart();
       setTimeout(() => {
         setIsOrderPlaced(false);
-        navigate("/"); // Redirect to home after a short delay
-      }, 3000); // Redirect after 3 seconds, adjust as needed
+        navigate("/");
+      }, 3000);
     }
   }, [isOrderPlaced, navigate]);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    fieldName: keyof typeof formData
-  ) => {
-    setFormData({ ...formData, [fieldName]: e.target.value });
+  const handleInputChange = (event, fieldName) => {
+    setFormData({ ...formData, [fieldName]: event.target.value });
   };
 
   const placeOrder = () => {
-    // In a real application, you would send this data to your backend
     console.log("Order placed with details:", {
       items: cartItems,
       total: cartTotal,
@@ -54,7 +50,7 @@ export default function CheckoutPage() {
 
   if (isOrderPlaced) {
     return (
-      <main className="p-10 max-w-3xl mx-auto">
+      <main className="h-scree p-10 max-w-3xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-6 text-green-500">
             Vielen Dank für Ihre Bestellung! ✅
@@ -70,7 +66,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="p-10 max-w-5xl mx-auto">
+    <main className="p-10 h-screen max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
 
       {cartItems.length === 0 ? (
