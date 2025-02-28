@@ -11,6 +11,8 @@ import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { ShoppingCart } from "./components/ShoppingCart";
+import { useState } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -40,17 +42,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
       </body>
-      <Footer />
     </html>
   );
 }
 
 export default function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
   return (
-    <>
-      <Navbar />
+    <div className="min-h-screen">
+      <Navbar setIsCartOpen={setIsCartOpen} />
       <Outlet />
-    </>
+      <ShoppingCart open={isCartOpen} onOpenChange={setIsCartOpen} />
+      <Footer />
+    </div>
   );
 }
 
