@@ -10,6 +10,7 @@ import { Card, CardContent } from "~/components/ui/card";
 import { useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { shopItems } from "~/api/shoppingCardTypes";
 
 export default function Home() {
   const productTexts = [
@@ -64,9 +65,9 @@ export default function Home() {
           <div className="p-20 m-auto">
             <Carousel className="max-w-[800px] ">
               <CarouselContent>
-                <CarouselPicture img={poster} />
-                <CarouselPicture img={poster} />
-                <CarouselPicture img={poster} />
+                <CarouselPicture img={shopItems.lampe.image} />
+                <CarouselPicture img={shopItems.armband.image} />
+                <CarouselPicture img={shopItems.app.image} />
               </CarouselContent>
 
               <div onClick={handlePrevSlide}>

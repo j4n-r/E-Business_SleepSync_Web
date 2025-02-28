@@ -10,9 +10,11 @@ import { Button } from "~/components/ui/button";
 import { useState } from "react";
 import { shopItems, type item } from "~/api/shoppingCardTypes";
 import { addMultipleToCart } from "~/api/shoppingCardApi";
+import { useOutletContext } from "react-router";
 
 export default function Shop() {
   const [selectedItems, setSelectedItems] = useState<item[]>([]);
+  const isCartOpen = useOutletContext();
 
   const isItemSelected = (currentItem: item) => {
     return selectedItems.some((item) => item.id === currentItem.id);
@@ -31,6 +33,7 @@ export default function Shop() {
   const addToCartHandler = () => {
     addMultipleToCart(selectedItems);
     setSelectedItems([]);
+    isCartOpen(true);
   };
   return (
     <div className="grid grid-cols-9">
@@ -42,7 +45,6 @@ export default function Shop() {
         />
       </div>
       <div className="flex flex-col p-10  col-span-5">
-        <div className="text-3xl font-bold">SleepSync Bundle</div>
         <div className="my-10">
           <Card
             className={`h-full col-span-3 cursor-pointer ${

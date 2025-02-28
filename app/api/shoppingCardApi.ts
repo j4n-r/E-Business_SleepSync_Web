@@ -2,19 +2,31 @@ import { type item } from "~/api/shoppingCardTypes";
 
 let shoppingCart: item[] = [];
 
+function checkIfInShoppingCart(item: item) {
+  return shoppingCart.some((currItem) => currItem === item);
+}
+
 export function addToCart(itemToAdd: item): item[] {
-  shoppingCart.push(itemToAdd);
+  if (checkIfInShoppingCart(itemToAdd)) {
+    updateQuantity(itemToAdd, itemToAdd.quantity + 1);
+  } else {
+    itemToAdd.quantity = 1;
+    shoppingCart.push(itemToAdd);
+  }
   return shoppingCart;
 }
 
 export function addMultipleToCart(items: item[]): item[] {
-  shoppingCart = [...shoppingCart, ...items];
+  items.forEach((item) => addToCart(item));
   return shoppingCart;
 }
 
 export function removeFromCart(itemToRemove: item): item[] {
+  shoppingCart.forEach((item) => {
+    item == itemToRemove ? item.quantity-- : "";
+  });
   shoppingCart = shoppingCart.filter((item) => {
-    return item.id !== itemToRemove.id;
+    return item.quantity > 0;
   });
   return shoppingCart;
 }
