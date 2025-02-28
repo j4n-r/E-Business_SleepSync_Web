@@ -15,6 +15,7 @@ cd eBusiness
 ## 3. Install Dependencies
 ```bash
 npm install
+npm install @radix-ui/react-dialog
 ```
 
 ## 4. Running the Project
