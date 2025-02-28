@@ -1,0 +1,6 @@
+import{w as r}from"./with-props-OWzC9nJr.js";import{x as i,r as n,l as e}from"./chunk-K6AXKMTT-OGq6qUHK.js";import{j as a}from"./proxy-BpC5ITQM.js";import{c}from"./createLucideIcon-Dz_O2GqP.js";/**
+ * @license lucide-react v0.469.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const l=c("LoaderCircle",[["path",{d:"M21 12a9 9 0 1 1-6.219-8.56",key:"13zald"}]]),h=r(function(){const t=i();return n.useEffect(()=>{const s=setTimeout(()=>{t("/")},3e3);return()=>clearTimeout(s)},[t]),e.jsx("div",{className:"h-screen p-10 max-w-3xl mx-auto",children:e.jsxs("div",{className:"text-center",children:[e.jsx("h1",{className:"text-3xl font-bold mb-6 text-green-500",children:"Vielen Dank für Ihre Bestellung!"}),e.jsx("p",{className:"mb-4",children:"Ihre Bestellung wurde erfolgreich aufgegeben. Sie werden in Kürze eine Bestätigungs-E-Mail erhalten."}),e.jsx("p",{children:"Sie werden in Kürze zur Startseite weitergeleitet."}),e.jsx("div",{className:"mt-8 flex justify-center items-center",children:e.jsx(a.div,{className:"animate-spin text-blue-500 h-14 w-14",transition:{loop:1/0,duration:.1},children:e.jsx(l,{className:"h-14 w-14"})})})]})})});export{h as default};
