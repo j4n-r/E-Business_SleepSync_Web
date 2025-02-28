@@ -32,12 +32,12 @@ export default function Newsletter() {
                     type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition"
                 >
-                    Jetzt anmelden
+                    Anmelden
                 </button>
             </form>
             {isSubmitted && (
                 <p className="text-green-500 mt-4">
-                    ✅ Du hast dich erfolgreich zum Newsletter angemeldet!
+                    Du hast dich erfolgreich zum Newsletter angemeldet! ✅ 
                 </p>
             )}
             <div className="mt-6">
