@@ -54,7 +54,14 @@ export function ShoppingCart({ open, onOpenChange }) {
                   key={item.id}
                   className="grid grid-cols-5 items-center gap-4 py-2 text-sm"
                 >
-                  <div className="col-span-2">{item.name}</div>
+                  <div className="flex col-span-2">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-16 mr-4  h-16 object-cover rounded"
+                    />
+                    <div className="pt-2">{item.name}</div>
+                  </div>
 
                   <div className="text-right">{item.quantity}</div>
                   <div className="text-right">€{item.price}</div>

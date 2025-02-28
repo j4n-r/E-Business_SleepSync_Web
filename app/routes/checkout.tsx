@@ -52,7 +52,7 @@ export default function CheckoutPage() {
       <main className="h-screen p-10 max-w-3xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-6 text-green-500">
-            Vielen Dank für Ihre Bestellung! ✅
+            Vielen Dank für Ihre Bestellung!
           </h1>
           <p className="mb-4">
             Ihre Bestellung wurde erfolgreich aufgegeben. Sie werden in Kürze
@@ -81,20 +81,27 @@ export default function CheckoutPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="grid gap-4">
-                <div className="grid grid-cols-4 items-center gap-4">
+                <div className="grid grid-cols-5 items-center gap-4">
                   <div className="col-span-2 font-medium">Produkt</div>
                   <div className="text-right">Preis</div>
                   <div className="text-right">Menge</div>
-                  <div className="text-right">Gesamt</div>
                 </div>
                 {cartItems.map((item) => (
                   <div
                     key={item.id}
-                    className="grid grid-cols-4 items-center gap-4 py-2"
+                    className="grid grid-cols-5 items-center gap-4 py-2"
                   >
-                    <div className="col-span-2">{item.name}</div>
+                    <div className="flex col-span-2">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-16 mr-4  h-16 object-cover rounded"
+                      />
+                      <div className="pt-2">{item.name}</div>
+                    </div>
                     <div className="text-right">€{item.price}</div>
                     <div className="text-right">{item.quantity}</div>
+                    <div className="text-right"></div>
                   </div>
                 ))}
               </CardContent>

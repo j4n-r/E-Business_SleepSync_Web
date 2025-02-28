@@ -1,55 +1,93 @@
 import { type item } from "~/api/shoppingCardTypes";
 
-let shoppingCart: item[] = [];
+const CART_STORAGE_KEY = "shoppingCart";
 
-function checkIfInShoppingCart(item: item) {
-  return shoppingCart.some((currItem) => currItem === item);
+function getShoppingCart(): item[] {
+  const cartData = localStorage.getItem(CART_STORAGE_KEY);
+  return cartData ? JSON.parse(cartData) : [];
+}
+
+function saveShoppingCart(cart: item[]): void {
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+}
+
+function checkIfInShoppingCart(itemToCheck: item): boolean {
+  const shoppingCart = getShoppingCart();
+  return shoppingCart.some((currItem) => currItem.id === itemToCheck.id);
 }
 
 export function addToCart(itemToAdd: item): item[] {
-  if (checkIfInShoppingCart(itemToAdd)) {
-    updateQuantity(itemToAdd, itemToAdd.quantity + 1);
+  const shoppingCart = getShoppingCart();
+  const existingItemIndex = shoppingCart.findIndex(
+    (currItem) => currItem.id === itemToAdd.id
+  );
+
+  if (existingItemIndex !== -1) {
+    shoppingCart[existingItemIndex].quantity += 1;
   } else {
     itemToAdd.quantity = 1;
     shoppingCart.push(itemToAdd);
   }
+  saveShoppingCart(shoppingCart);
   return shoppingCart;
 }
 
 export function addMultipleToCart(items: item[]): item[] {
-  items.forEach((item) => addToCart(item));
+  let shoppingCart = getShoppingCart();
+  items.forEach((itemToAdd) => {
+    const existingItemIndex = shoppingCart.findIndex(
+      (currItem) => currItem.id === itemToAdd.id
+    );
+    if (existingItemIndex !== -1) {
+      shoppingCart[existingItemIndex].quantity += itemToAdd.quantity;
+    } else {
+      shoppingCart.push(itemToAdd);
+    }
+  });
+  saveShoppingCart(shoppingCart);
   return shoppingCart;
 }
 
 export function removeFromCart(itemToRemove: item): item[] {
-  shoppingCart.forEach((item) => {
-    item == itemToRemove ? item.quantity-- : "";
-  });
-  shoppingCart = shoppingCart.filter((item) => {
-    return item.quantity > 0;
-  });
+  let shoppingCart = getShoppingCart();
+  const existingItemIndex = shoppingCart.findIndex(
+    (currItem) => currItem.id === itemToRemove.id
+  );
+
+  if (existingItemIndex !== -1) {
+    shoppingCart[existingItemIndex].quantity--;
+    if (shoppingCart[existingItemIndex].quantity <= 0) {
+      shoppingCart.splice(existingItemIndex, 1);
+    }
+  }
+  saveShoppingCart(shoppingCart);
   return shoppingCart;
 }
 
 export function updateQuantity(itemToUpdate: item, quantity: number): item[] {
-  shoppingCart.forEach((item) => {
-    if (item.id == itemToUpdate.id) {
-      itemToUpdate.quantity = quantity;
-    }
-  });
+  let shoppingCart = getShoppingCart();
+  const existingItemIndex = shoppingCart.findIndex(
+    (currItem) => currItem.id === itemToUpdate.id
+  );
+
+  if (existingItemIndex !== -1) {
+    shoppingCart[existingItemIndex].quantity = quantity;
+  }
+  saveShoppingCart(shoppingCart);
   return shoppingCart;
 }
 
 export function clearCart(): item[] {
-  shoppingCart = [];
-  return shoppingCart;
+  localStorage.removeItem(CART_STORAGE_KEY);
+  return [];
 }
 
 export function getCartItems(): item[] {
-  return shoppingCart;
+  return getShoppingCart();
 }
 
 export function getCartTotal(): number {
+  const shoppingCart = getShoppingCart();
   return shoppingCart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0

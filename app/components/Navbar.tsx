@@ -10,6 +10,7 @@ import { Link } from "react-router";
 import { motion, useScroll, useSpring } from "motion/react";
 import { Button } from "./ui/button";
 import { LucideShoppingCart } from "lucide-react";
+import { getCartItems } from "~/api/shoppingCardApi";
 
 export function Navbar({ setIsCartOpen }) {
   const { scrollYProgress } = useScroll();
@@ -50,42 +51,23 @@ export function Navbar({ setIsCartOpen }) {
           </Link>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           {" "}
-          <Button
-            variant="ghost"
-            size="icon"
+          <div
+            role="button"
+            className="relative p-2"
             onClick={() => setIsCartOpen(true)}
           >
-            <LucideShoppingCart />
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Avatar className="cursor-pointer">
-                <AvatarImage
-                  src="https://avatars.githubusercontent.com/u/101867832?s=400&u=ae243d857b3070615811baee9e9cd8b3fdfe0658&v=4"
-                  alt="@shadcn"
-                />
-                <AvatarFallback>SC</AvatarFallback>
-              </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end" forceMount>
-              <div className="flex items-center gap-2 p-2">
-                <div className="flex flex-col space-y-1 leading-none">
-                  <p className="font-medium">shadcn</p>
-                  <p className="w-[200px] truncate text-sm text-muted-foreground">
-                    name@website.com
-                  </p>
-                </div>
-              </div>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Log out</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+            <LucideShoppingCart className="" />
+            {getCartItems().length == 0 ? (
+              ""
+            ) : (
+              <sup className="absolute top-1 right-0 text-xs bg-red-500 text-white rounded-full px-1.5 py-0.5 transform translate-x-1/2 -translate-y-1/2">
+                {" "}
+                {getCartItems().length}
+              </sup>
+            )}
+          </div>
         </div>
       </div>
       <motion.div
