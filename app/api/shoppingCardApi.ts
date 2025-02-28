@@ -7,10 +7,16 @@ export function addToCart(itemToAdd: item): item[] {
   return shoppingCart;
 }
 
+export function addMultipleToCart(items: item[]): item[] {
+  shoppingCart = [...shoppingCart, ...items];
+  return shoppingCart;
+}
+
 export function removeFromCart(itemToRemove: item): item[] {
-  return (shoppingCart = shoppingCart.filter(
-    (item) => item.id !== itemToRemove.id
-  ));
+  shoppingCart = shoppingCart.filter((item) => {
+    return item.id !== itemToRemove.id;
+  });
+  return shoppingCart;
 }
 
 export function updateQuantity(itemToUpdate: item, quantity: number): item[] {

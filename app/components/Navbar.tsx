@@ -9,14 +9,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Link } from "react-router";
 import { motion, useScroll, useSpring } from "motion/react";
 import { Button } from "./ui/button";
-import { useState } from "react";
 import { LucideShoppingCart } from "lucide-react";
-import { ShoppingCart } from "~/components/ShoppingCart";
 
-export function Navbar() {
+export function Navbar({ setIsCartOpen }) {
   const { scrollYProgress } = useScroll();
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -104,7 +101,6 @@ export function Navbar() {
           backgroundColor: "#ffffff",
         }}
       />
-      <ShoppingCart open={isCartOpen} onOpenChange={setIsCartOpen} />
     </header>
   );
 }
