@@ -10,7 +10,6 @@ import {
 import { Input } from "~/components/ui/input";
 import { useEffect, useState } from "react";
 import { getCartItems, getCartTotal, clearCart } from "~/api/shoppingCardApi";
-import { type item } from "~/api/shoppingCardTypes";
 import { useNavigate } from "react-router";
 
 export default function CheckoutPage() {
@@ -50,7 +49,7 @@ export default function CheckoutPage() {
 
   if (isOrderPlaced) {
     return (
-      <main className="h-scree p-10 max-w-3xl mx-auto">
+      <main className="h-screen p-10 max-w-3xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-6 text-green-500">
             Vielen Dank für Ihre Bestellung! ✅
@@ -66,7 +65,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="p-10 h-screen max-w-5xl mx-auto">
+    <main className="p-10 h-screen max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
 
       {cartItems.length === 0 ? (
@@ -96,14 +95,11 @@ export default function CheckoutPage() {
                     <div className="col-span-2">{item.name}</div>
                     <div className="text-right">€{item.price}</div>
                     <div className="text-right">{item.quantity}</div>
-                    <div className="text-right">
-                      €{(item.price * item.quantity).toFixed(2)}
-                    </div>
                   </div>
                 ))}
               </CardContent>
               <CardFooter className="flex justify-between">
-                <span className="text-xl font-semibold">
+                <span className="text-xl  font-semibold">
                   Total: €{cartTotal.toFixed(2)}
                 </span>
               </CardFooter>
