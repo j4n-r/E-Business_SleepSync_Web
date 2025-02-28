@@ -8,9 +8,15 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Link } from "react-router";
 import { motion, useScroll, useSpring } from "motion/react";
+import { Button } from "./ui/button";
+import { useState } from "react";
+import { LucideShoppingCart } from "lucide-react";
+import { ShoppingCart } from "~/components/ShoppingCart";
 
 export function Navbar() {
   const { scrollYProgress } = useScroll();
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -25,15 +31,22 @@ export function Navbar() {
 
         <nav className="hidden gap-20 text-lg md:flex">
           <Link
-            to="/features" className="transition-colors hover:text-gray-400"
+            to="/features"
+            className="transition-colors hover:text-gray-400"
           >
             Features
           </Link>
-          <Link to ="/sleepfunction" className= "transition-colors hover:text-gray-400">
-          Schlafwissen
+          <Link
+            to="/sleepfunction"
+            className="transition-colors hover:text-gray-400"
+          >
+            Schlafwissen
           </Link>
-          <Link to = "/daynightrythmus" className= "transition-colors hover:text-gray-400">
-          Tag Nacht Rythmus 
+          <Link
+            to="/daynightrythmus"
+            className="transition-colors hover:text-gray-400"
+          >
+            Tag Nacht Rythmus
           </Link>
           <Link to="/shop" className="transition-colors hover:text-gray-400">
             Shop
@@ -41,6 +54,14 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center space-x-4">
+          {" "}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsCartOpen(true)}
+          >
+            <LucideShoppingCart />
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar className="cursor-pointer">
@@ -83,6 +104,7 @@ export function Navbar() {
           backgroundColor: "#ffffff",
         }}
       />
+      <ShoppingCart open={isCartOpen} onOpenChange={setIsCartOpen} />
     </header>
   );
 }

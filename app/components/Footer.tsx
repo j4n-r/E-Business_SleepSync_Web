@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white p-10">
+    <section className="bg-black text-white p-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center md:text-left">
         <div>
           <Link to="/company" className="text-white hover:underline block">
@@ -31,6 +31,6 @@ export function Footer() {
         <Copyright className="mr-1" />
         <span>2025 SleepSync</span>
       </div>
-    </footer>
+    </section>
   );
 }

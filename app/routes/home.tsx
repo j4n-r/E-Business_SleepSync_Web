@@ -5,12 +5,10 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from "~/components/ui/carousel";
 import { Card, CardContent } from "~/components/ui/card";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-// 1) Import framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home() {
@@ -62,9 +60,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid grid-cols-2 h-screen w-full p-20">
-          <div className="p-20 my-auto">
-            <Carousel className="w-full">
+        <section className="grid grid-cols-2 h-screen w-full mb-10">
+          <div className="p-20 m-auto">
+            <Carousel className="max-w-[800px] ">
               <CarouselContent>
                 <CarouselPicture img={poster} />
                 <CarouselPicture img={poster} />
@@ -108,7 +106,7 @@ export function CarouselPicture({ img }) {
       <div className="p-1 mx-auto max-w-[800px]">
         <Card className="border-0">
           <CardContent className="flex aspect-square p-0 justify-center">
-            <img src={img} className="object-cover rounded-md drop-shadow-xl" />
+            <img src={img} className="object-cover rounded-xl drop-shadow-xl" />
           </CardContent>
         </Card>
       </div>
