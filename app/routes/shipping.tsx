@@ -17,7 +17,7 @@ export default function Shipping() {
             Wir versenden unsere Artikel mit DHL.
           </p>
           <p className="mb-4">
-            Bestellungen vor 14 Uhr werden i.d.R. am gleichen Tag verschickt 🙂
+            Bestellungen vor 14 Uhr werden i.d.R. am gleichen Tag verschickt. 🙂
           </p>
 
           <h2 className="text-xl font-bold mt-6 mb-2">Partnershops 🛒</h2>
