@@ -18,11 +18,11 @@ export default function Home() {
       "Unsere smarte Lampe nutzt sanftes und angenehmes Licht, um dein Einschlafen zu erleichtern und das Aufwachen angenehmer zu machen – für einen natürlichen und erholsamen Schlafrhythmus.",
     ],
     [
-      "Verstehe und optimiere deinen Schlaf",
+      "Verstehe und optimiere deinen Schlaf💡",
       "Unser speziell entwickeltes Armband trackt deinen Schlaf, während die App wertvolle Analysen und Tipps liefert. So kannst du deine Schlafqualität verbessern und erholter aufwachen.",
     ],
     [
-      "Erhalte Zugang zu unserer App!",
+      "Erhalte Zugang zu unserer App!📱",
       "Beim Kauf eines Sets erhältst du einen lebenslangen Zugriff auf unsere App. Hier kannst du deinen Schlaf tracken, Analysen einsehen und Tipps für einen besseren Schlaf erhalten.",
     ],
   ];
